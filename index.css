@@ -1,0 +1,38 @@
+/* Tailwind directives must come before custom @layer rules */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/5;
+  }
+}
+
+.glass-panel:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mesh-gradient {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(74, 0, 224, 0.15) 0%,
+    rgba(10, 26, 58, 0) 50%
+  );
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #0a1a3a;
+  color: #e2e8f0;
+}
